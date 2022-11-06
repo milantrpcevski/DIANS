@@ -1,4 +1,4 @@
-<h1>Членови од проектот:</h1><br>
+<h1>Членови:</h1><br>
 <ol>
 <li>Дарио Иванов 201029 dario.ivanov@students.finki.ukim.mk</li>
 <li>Никола Арсов 201008 nikola.arsov@students.finki.ukim.mk</li>
