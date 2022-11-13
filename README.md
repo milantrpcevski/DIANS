@@ -1,6 +1,6 @@
 <h1 align="center">Дизајн и архитектура на софтвер</h1><br>
 <hr>
-<div aligh="center">
+<div align="center">
 <h1>Членови:</h1><br>
 <ol>
 <li>Дарио Иванов 201029 dario.ivanov@students.finki.ukim.mk</li>
