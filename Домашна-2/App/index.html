@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Umbrella</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <form class="example" method="dialog">
+        <input id="input" type="text" placeholder="Search.." name="search">
+        <button onclick="getCitySearch()" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="current-info">
+
+        <div class="date-container">
+            <div class="time" id="time">
+                12:30 <span id="am-pm">PM</span>
+            </div>
+            <div class="date" id="date">
+                Monday, 25 May
+            </div>
+
+            <div class="others" id="current-weather-items">
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="future-forecast">
+    <div class="weather-forecast" id="weather-forecast">
+
+
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
