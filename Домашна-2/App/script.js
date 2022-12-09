@@ -7,9 +7,11 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const apiKey="b5f8a2a27ca88545fab0c212da317ca4";
+let error=document.getElementById("error-message");
 
 
 
+//So ova postignuvame postojano azuriranje na vremeto i datata
 setInterval(() => {
     const time = new Date();
     const month = time.getMonth();
@@ -26,31 +28,32 @@ setInterval(() => {
 
 }, 1000);
 
+
+//Go zemame inputot od korisnikot za gradot
 function getCitySearch(){
     let input = document.getElementById("input");
 
-    clearWeatherItems();
-    getData(formatInput(input.value));
+    clearWeatherItems();// dokolku prethodno imame prebaruvanje za drug grad gi trgame polinjata
+    getData(formatInput(input.value)); //gi prevzemame podatocite za vneseniot grad
 
 }
-
+//Brisenje na polinjata za naredniote denovi od prebaruvanje
 function clearWeatherItems()
 {
     let weatherItems=document.getElementsByClassName("weather-forecast-item");
     let forecastContainer=document.getElementById("weather-forecast");
-    console.log(weatherItems.length);
     if(weatherItems.length>0)
     {
         forecastContainer.innerHTML="";
     }
 }
+
+//Go transformirame inputot vo format na first letter uppercase
 function formatInput(input)
 {
-
     let lowerCaseInput=input.toLowerCase();
     let str=lowerCaseInput.slice(1);
     lowerCaseInput= lowerCaseInput.charAt(0).toUpperCase()+str;
-
     return lowerCaseInput;
 }
 
@@ -60,9 +63,20 @@ function getData(input)
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=${apiKey}`).then(res => res.json()).then(data => {
 
         showWeatherData(data)
-    })
+        removeErrorMessage();
+    }).catch(showErrorMessage());
 }
 
+function removeErrorMessage(){
+    error.innerText="";
+}
+
+
+function showErrorMessage()
+{
+    error.innerText="No city found! Try again";
+}
+//Postavuvame pozadina spored toa kakva e momentalnata vremenska prognoza za samiot grad
 function setBackground(weather)
 {
 
@@ -86,17 +100,15 @@ function setBackground(weather)
         document.body.style.backgroundImage="url('Images/snow.jpg')";
     }
 }
+
+//Ovde gi obrabotuvame podatocite koi gi dobivame preku API-to
 function showWeatherData (data) {
     let podatoci=data.main;
     let humidity = podatoci.humidity;
     let temp = podatoci.temp;
     let feels_like = podatoci.feels_like;
     let weather = data.weather[0].main;
-    // console.log(podatoci);
-    // console.log("Temperature: "+podatoci.temp);
-    // console.log("Feels like: "+podatoci.feels_like);
-    // console.log("123:"+data.weather[0].main);
-    // console.log("Humidity:"+podatoci.humidity);
+
     currentWeatherItemsEl.innerHTML =
         `<div class="weather-item">
        
@@ -117,11 +129,15 @@ function showWeatherData (data) {
         <div>${humidity}</div>
   
     `;
-    setBackground(weather);
+    setBackground(weather);// postavuvame pozadina na stranata
+    //Od samoto api gi dobivame i tocnite koordinati za vnesniot grad koi ni se potrebni za povik na drugo api za
+    //vremenskata prognoza za narednite denovi
     let lon = data.coord.lon;
     let lat = data.coord.lat;
     inNextDaysWeather(lon,lat);
 }
+
+//Zemame podatoci za narednite denovi
 function inNextDaysWeather(lon,lat){
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&units=metric&lon=${lon}&appid=${apiKey}`).then(res => res.json()).then(nextData => {
 
@@ -129,6 +145,8 @@ function inNextDaysWeather(lon,lat){
     });
 
 }
+
+//Gi prikazuvame podatocite za vremenskata prognoza za narednite denovi
 function showNextWeatherData(data){
     let weatherForecast = document.getElementById("weather-forecast");
     let currentDate=new Date();

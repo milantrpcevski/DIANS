@@ -222,3 +222,8 @@ body{
         overflow-x: scroll;
     }
 }
+
+#error-message
+{
+    color: red;
+}
