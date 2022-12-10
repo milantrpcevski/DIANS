@@ -1,6 +1,6 @@
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
-const currentWeatherItemsEl = document.getElementById('current-weather-items');
+const currentWeatherItemsEl = document.getElementById('current-box');
 
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -110,24 +110,26 @@ function showWeatherData (data) {
     let weather = data.weather[0].main;
 
     currentWeatherItemsEl.innerHTML =
-        `<div class="weather-item">
+   ` <div class="others" id="current-weather-items">
+<div class="weather-item">
        
-    </div>
-    <div class="weather-item">
-        <div>Temeprature</div>
-        <div>${temp}</div>
-    </div>
-    <div class="weather-item">
-        <div>Feels like</div>
-        <div>${feels_like}</div>
-    </div>
-    <div class="weather-item">
-    <div>Weather</div>
-        <div>${weather}</div>
-    </div>
-     <div class="weather-item">Humidity</div>
-        <div>${humidity}</div>
-  
+       </div>
+       <div class="weather-item">
+           <div>Temeprature</div>
+           <div>${temp}</div>
+       </div>
+       <div class="weather-item">
+           <div>Feels like</div>
+           <div>${feels_like}</div>
+       </div>
+       <div class="weather-item">
+       <div>Weather</div>
+           <div>${weather}</div>
+       </div>
+        <div class="weather-item">
+        <div>Humidity</div>
+           <div>${humidity}</div>
+        </div> 
     `;
     setBackground(weather);// postavuvame pozadina na stranata
     //Od samoto api gi dobivame i tocnite koordinati za vnesniot grad koi ni se potrebni za povik na drugo api za
