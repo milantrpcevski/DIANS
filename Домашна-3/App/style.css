@@ -249,3 +249,16 @@ body {
 #error-message {
     color: red;
 }
+
+#getMyLoccationButton
+{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: rgb(125, 88, 18);;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}

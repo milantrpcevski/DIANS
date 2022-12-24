@@ -75,6 +75,7 @@ function showErrorMessage() {
 //Postavuvame pozadina spored toa kakva e momentalnata vremenska prognoza za samiot grad
 function setBackground(weather) {
 
+    
     if (weather == "Clear") {
         document.body.style.backgroundImage = "url('Images/clear_sky.jpg')";
     } else if (weather == "Sunny") {
@@ -163,16 +164,16 @@ function showNextWeatherData(data) {
 
 
 
-getWeatherData()
+
 function getWeatherData () {
     navigator.geolocation.getCurrentPosition((success) => {
         
         let {latitude, longitude } = success.coords;
 
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`).then(res => res.json()).then(data => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`).then(res => res.json()).then(data => {
 
-        console.log(data)
-        inNextDaysWeather(longitude,latitude);
+        showWeatherData(data);
+      
         
         })
 
