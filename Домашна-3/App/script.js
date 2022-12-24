@@ -90,7 +90,7 @@ function setBackground(weather) {
 function showWeatherData(data) {
     let podatoci = data.main;
     let humidity = podatoci.humidity;
-    let temp = podatoci.temp;
+    let temp = podatoci.temp.round();
     let feels_like = podatoci.feels_like;
     let weather = data.weather[0].main;
 
