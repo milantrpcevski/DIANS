@@ -20,7 +20,7 @@ form.example button {
     float: left;
     width: 20%;
     padding: 10px;
-    background: rgb(125, 88, 18);;
+    background: red;
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -29,7 +29,7 @@ form.example button {
 }
 
 form.example button:hover {
-    background: #0b7dda;
+    background: rgb(202, 36, 36);
 }
 
 /* Clear floats */
@@ -40,7 +40,7 @@ form.example::after {
 }
 
 body {
-    background: orange;
+    background: #000;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -54,6 +54,7 @@ body {
 }
 
 .current-info {
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -93,7 +94,7 @@ body {
 .current-info .others {
     display: flex;
     flex-direction: column;
-    background: rgb(125, 88, 18);;
+    background: rgb(207, 2, 2);
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
@@ -119,7 +120,7 @@ body {
 }
 
 #contact a {
-    color: orange;
+    color: rgb(207, 2, 2);;
     font-size: large;
     text-align: center;
     text-decoration: none;
@@ -255,7 +256,7 @@ body {
     float: left;
     width: 20%;
     padding: 10px;
-    background: rgb(207, 2, 2);;
+    background: rgb(207, 2, 2);
     color: white;
     font-size: 17px;
     border: 1px solid grey;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
 
 * {
     margin: 0;
@@ -17,7 +17,7 @@ textarea {
     width: 100%;
     min-height: 100vh;
     padding: 2rem;
-    background-color: orange;
+    background-color: rgb(202, 36, 36);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@ textarea {
 }
 
 #contact a {
-    color: orange;
+    color: rgb(202, 36, 36);;
     font-size: large;
     text-align: center;
     text-decoration: none;
@@ -71,13 +71,13 @@ textarea {
 }
 
 .contact-form {
-    background-color: rgb(125, 88, 18);
+    background-color: rgb(202, 76, 76);;
     position: relative;
 }
 
 .circle {
     border-radius: 50%;
-    background: linear-gradient(135deg, transparent 20%, orange);
+    background: linear-gradient(135deg, transparent 20%, rgb(202, 36, 36));
     position: absolute;
 }
 
@@ -100,7 +100,7 @@ textarea {
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: orange;
+    background-color: rgb(202, 36, 36);
     transform: rotate(45deg);
     top: 50px;
     left: -13px;
@@ -172,7 +172,7 @@ textarea.input {
     background-color: #fff;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color: orange;
+    color: rgb(202, 36, 36);
     line-height: 1;
     border-radius: 25px;
     outline: none;
@@ -238,7 +238,7 @@ textarea.input {
 }
 
 .contact-info .title {
-    color: orange;
+    color: rgb(202, 36, 36);
 }
 
 .text {
@@ -276,7 +276,7 @@ textarea.input {
     width: 35px;
     height: 35px;
     border-radius: 5px;
-    background: linear-gradient(45deg, rgb(122, 105, 72), orange);
+    background: linear-gradient(45deg, rgb(122, 105, 72), rgb(202, 36, 36));
     color: #fff;
     text-align: center;
     line-height: 35px;
@@ -293,7 +293,7 @@ textarea.input {
     position: absolute;
     width: 110px;
     height: 100px;
-    border: 22px solid orange;
+    border: 22px solid rgb(202, 36, 36);
     border-radius: 50%;
     bottom: -77px;
     right: 50px;
@@ -305,7 +305,7 @@ textarea.input {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, rgb(104, 82, 43), orange);
+    background: linear-gradient(to bottom, rgb(191, 87, 87), rgb(202, 36, 36));
     bottom: 50%;
     right: 50%;
     transform: translate(-40%, 38%);
@@ -316,7 +316,7 @@ textarea.input {
     position: absolute;
     width: 360px;
     height: 360px;
-    background-color: orange;
+    background-color: rgb(202, 36, 36);
     border-radius: 50%;
     top: calc(50% - 180px);
     left: calc(50% - 180px);

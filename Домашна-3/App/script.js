@@ -90,8 +90,8 @@ function setBackground(weather) {
 function showWeatherData(data) {
     let podatoci = data.main;
     let humidity = podatoci.humidity;
-    let temp = podatoci.temp.round();
-    let feels_like = podatoci.feels_like;
+    let temp = Math.round(podatoci.temp);
+    let feels_like = Math.round(podatoci.feels_like);
     let weather = data.weather[0].main;
 
     currentWeatherItemsEl.innerHTML =
@@ -142,7 +142,7 @@ function showNextWeatherData(data) {
     for (let i = 8, j = 1; i <= 24; i += 8, j++) {
         let day = data.list[i].dt_txt;
         let weather = data.list[i].weather[0].main;
-        let temp = data.list[i].main.temp;
+        let temp = Math.round(data.list[i].main.temp);
 
         weatherForecast.innerHTML += `
         <div class="weather-forecast-item">
