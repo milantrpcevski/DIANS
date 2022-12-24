@@ -2,13 +2,11 @@ const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const currentWeatherItemsEl = document.getElementById('current-box');
 
-
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const apiKey = "b5f8a2a27ca88545fab0c212da317ca4";
 let error = document.getElementById("error-message");
-
 
 //So ova postignuvame postojano azuriranje na vremeto i datata
 setInterval(() => {
@@ -27,14 +25,12 @@ setInterval(() => {
 
 }, 1000);
 
-
 //Go zemame inputot od korisnikot za gradot
 function getCitySearch() {
     let input = document.getElementById("input");
 
     clearWeatherItems();// dokolku prethodno imame prebaruvanje za drug grad gi trgame polinjata
     getData(formatInput(input.value)); //gi prevzemame podatocite za vneseniot grad
-
 }
 
 //Brisenje na polinjata za naredniote denovi od prebaruvanje
@@ -66,7 +62,6 @@ function getData(input) {
 function removeErrorMessage() {
     error.innerText = "";
 }
-
 
 function showErrorMessage() {
     error.innerText = "No city found! Try again";
@@ -135,7 +130,6 @@ function inNextDaysWeather(lon, lat) {
 
         showNextWeatherData(nextData);
     });
-
 }
 
 //Gi prikazuvame podatocite za vremenskata prognoza za narednite denovi
@@ -158,25 +152,14 @@ function showNextWeatherData(data) {
         </div>
     `
     }
-
-
 }
-
-
-
 
 function getWeatherData () {
     navigator.geolocation.getCurrentPosition((success) => {
-        
         let {latitude, longitude } = success.coords;
-
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`).then(res => res.json()).then(data => {
 
         showWeatherData(data);
-      
-        
-        })
-
+      })
     })
-
 }
