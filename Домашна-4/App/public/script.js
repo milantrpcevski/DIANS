@@ -41,7 +41,6 @@ function getCitySearch() {
 
 //Brisenje na polinjata za naredniote denovi od prebaruvanje
 function clearWeatherItems() {
-    console.log("1");
     let weatherItems = document.getElementsByClassName("weather-forecast-item");
     let forecastContainer = document.getElementById("weather-forecast");
     if (weatherItems.length > 0) {
@@ -163,12 +162,11 @@ function showNextWeatherData(data) {
 }
 
 function getWeatherData () {
-    clearWeatherItems();// dokolku prethodno imame prebaruvanje za drug grad gi trgame polinjata
-    console.log("0");
 
     navigator.geolocation.getCurrentPosition((success) => {
         let {latitude, longitude } = success.coords;
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`).then(res => res.json()).then(data => {
+            clearWeatherItems();// dokolku prethodno imame prebaruvanje za drug grad gi trgame polinjata
 
         showWeatherData(data);
       })
