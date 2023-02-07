@@ -10,7 +10,7 @@
 <li>Милан Трпчевски 206063 milan.trpchevski@students.finki.ukim.mk</li>
 </ol><br>
 <hr>
-<div>Линк кон апликацијата поставена на Azure <a>https://umbrelladians.azurewebsites.net/</a></div>
+<div>Линк кон апликацијата поставена на Azure <a href="https://umbrelladians.azurewebsites.net/">https://umbrelladians.azurewebsites.net/</a></div>
 <hr>
 <div>Страната е хостирана со помош на Github Pages</div><br>
 <a href="https://milantrpcevski.github.io/DIANS/%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B0-3/App/index.html">Линк кон веб страната</a>
