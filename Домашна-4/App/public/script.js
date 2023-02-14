@@ -90,6 +90,8 @@ function setBackground(weather) {
         document.body.style.backgroundImage = "url('../Images/rain.jpg')";
     } else if (weather == "Snow") {
         document.body.style.backgroundImage = "url('../Images/snow.jpg')";
+    } else if (weather == 'Fog' || weather == 'Mist' || weather == 'Smog'){
+        document.body.style.backgroundImage = "url('../Images/fog.webp')";
     }
 }
 
