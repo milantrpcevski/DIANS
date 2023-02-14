@@ -42,13 +42,18 @@ function getCitySearch() {
 //Brisenje na polinjata za naredniote denovi od prebaruvanje
 function clearWeatherItems() {
     let weatherItems = document.getElementsByClassName("weather-forecast-item");
+    let currentInfo=document.getElementById("current-box");
+    if(currentInfo!=null)
+    {
+        currentInfo.innerHTML='';
+
+    }
     let forecastContainer = document.getElementById("weather-forecast");
     if (weatherItems.length > 0) {
         forecastContainer.innerHTML = "";
     }
 
 }
-
 //Go transformirame inputot vo format na first letter uppercase
 function formatInput(input) {
     let lowerCaseInput = input.toLowerCase();
