@@ -63,7 +63,7 @@ function getData(input) {
 
         showWeatherData(data)
         removeErrorMessage();
-    }).catch(showErrorMessage());
+    }).catch();
 }
 
 function removeErrorMessage() {
@@ -97,6 +97,10 @@ function setBackground(weather) {
 
 //Ovde gi obrabotuvame podatocite koi gi dobivame preku API-to
 function showWeatherData(data) {
+    //Proverka dali e vnesen tochniot grad
+    if( data.message == "city not found") 
+        showErrorMessage();
+    
     let podatoci = data.main;
     let humidity = podatoci.humidity;
     let temp = Math.round(podatoci.temp);
